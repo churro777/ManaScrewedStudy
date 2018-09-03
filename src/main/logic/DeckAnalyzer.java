@@ -11,4 +11,12 @@ public class DeckAnalyzer {
     void analyzeDeck(Deck deck){
         // stub
     }
+
+    /**
+     * Search for Mana Clumps
+     * @param deck
+     */
+    void searchForManaClumps(Deck deck){
+        // stub
+    }
 }
