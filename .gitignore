@@ -4,3 +4,6 @@ ManaScrewedStudy.iml
 
 # Save files
 *~
+
+# Out files
+out/
