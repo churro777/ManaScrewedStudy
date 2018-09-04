@@ -7,4 +7,7 @@ package main.application;
  * to not get mana screwed, meaning you're short on mana.
  */
 public class ManaScrewedStudyApp {
+    public static void main(String[] args){
+        System.out.println("Mana screwed!!");
+    }
 }

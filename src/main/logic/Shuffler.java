@@ -11,6 +11,8 @@ public class Shuffler {
      * @param isRandomPickup
      */
     void powerShuffle(Deck deckOfCards, int numberOfPiles, boolean isRandomPickup){
-        // stub
+        // TODO implement method
     }
+
+    // TODO figure out other ways to shuffle
 }

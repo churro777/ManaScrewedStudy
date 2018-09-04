@@ -12,7 +12,7 @@ public class DeckAnalyzer {
      * @return score - biggest mana clump/total mana
      */
     public Double analyzeDeck(Deck deck){
-        //
+        // TODO Implement logic
         return 1.0;
     }
 
@@ -22,7 +22,12 @@ public class DeckAnalyzer {
      * @return biggest mana clump - goal is around 3
      */
     public int searchForManaClumps(Deck deck){
-        // stub
+        // TODO Implement logic
         return 35;
     }
+
+    // TODO create other methods for analyzing deck
+    // - search for all mana clumps
+    // - figure out how many mana clumps there are
+
 }
