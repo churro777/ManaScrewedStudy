@@ -3,6 +3,10 @@ package main.model;
 public class CommanderDeck extends Deck {
     private String commander;
 
+    public CommanderDeck(){
+        super();
+    }
+
     public CommanderDeck(String commanderName){
         commander = commanderName;
     }
@@ -13,8 +17,8 @@ public class CommanderDeck extends Deck {
     }
 
     @Override
-    Card removeTopCard() {
-        return super.removeTopCard();
+    Card popTopCard() {
+        return super.popTopCard();
     }
 
 

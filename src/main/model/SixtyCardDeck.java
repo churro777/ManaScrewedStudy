@@ -1,13 +1,18 @@
 package main.model;
 
 public class SixtyCardDeck extends Deck {
+
+    SixtyCardDeck(){
+        super();
+    }
+
     @Override
     void addCard(Card card) {
         super.addCard(card);
     }
 
     @Override
-    Card removeTopCard() {
-        return super.removeTopCard();
+    Card popTopCard() {
+        return super.popTopCard();
     }
 }
