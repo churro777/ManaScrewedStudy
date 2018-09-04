@@ -13,7 +13,7 @@ public class DeckAnalyzer {
      */
     public Double analyzeDeck(Deck deck){
         //
-        return 0.0;
+        return 1.0;
     }
 
     /**
