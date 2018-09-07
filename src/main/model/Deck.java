@@ -4,6 +4,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class Deck {
+    /**
+     * First card is the bottom and last card is the top
+     * [x,o,o,o,x,o,x,o,x,o]
+     * first/bottom      last/top
+     */
     private Deque<Card> cards = new ArrayDeque<>();
     private int numOfLands;
 
@@ -30,17 +35,23 @@ public class Deck {
      * Add a card to the deque
      * @param card
      */
-    void addCard(Card card) {
-        cards.add(card);
+    public void addCard(Card card) {
+        cards.addLast(card);
     }
 
     /**
      * Get and remove the top card
      * @return
      */
-    Card popTopCard() {
-        return cards.pop();
+    public Card popTopCard() {
+        return cards.removeLast();
     }
+
+    /**
+     * First card is the bottom..last is the top
+     * @return bottom (or first) card in the deck
+     */
+    public Card popBottomCard() { return cards.removeFirst();}
 
     /**
      * Add an X amount of cards
@@ -57,9 +68,9 @@ public class Deck {
      * Remove X cards from the deck
      * @param amountOfCards
      */
-    void removeCardLot(int amountOfCards){
+    public void removeCardLot(int amountOfCards){
         for (int i = 0; i < amountOfCards; i++) {
-            cards.pop();
+            cards.removeLast();
         }
     }
 
@@ -67,13 +78,13 @@ public class Deck {
      * Check how many Non lands are at the top of the deck
      * @return How many non lands are at the top
      */
-    int numOfNonLandsAtTop() {
+    public int numOfNonLandsAtTop() {
         int numOfNonLands = 0;
 
         Deque<Card> tempCards = cards;
 
         while (tempCards.size() > 0) {
-            Card card = tempCards.pop();
+            Card card = tempCards.removeLast();
 
             if (card.isNonLand()) {
                 numOfNonLands++;
@@ -89,13 +100,13 @@ public class Deck {
      * Check how many Lands are at the top of the deck
      * @return How many Lands are at the top
      */
-    int numOfLandsAtTop() {
+    public int numOfLandsAtTop() {
         int numOfLands = 0;
 
         Deque<Card> tempCards = cards;
 
         while (tempCards.size() > 0) {
-            Card card = tempCards.pop();
+            Card card = tempCards.removeLast();
 
             if (card.isLand()) {
                 numOfLands++;
@@ -121,5 +132,24 @@ public class Deck {
      */
     public void setNumOfLands(int numOfLands) {
         this.numOfLands = numOfLands;
+    }
+
+    /**
+     * get the amount of cards in the deck
+     * @return size
+     */
+    public int size(){
+        return cards.size();
+    }
+
+    /**
+     * Add a deck to this deck object
+     * @param secondDeck
+     */
+    public void plus(Deck secondDeck) {
+
+        for (int i = 0; i < secondDeck.size(); i++) {
+            addCard(secondDeck.popBottomCard());
+        }
     }
 }
